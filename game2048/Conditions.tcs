@@ -1,0 +1,68 @@
+taskKey="com.codegym.games.game2048.part03"\n\n2048 (Part 3/18)
+
+We&#39;ll use the game engine to display the current state of the game. And a 4x4 array is perfect for storing
+the state.
+
+So, create an int[][] gameField field and initialize with a SIDExSIDE int[][] array.
+By default, the elements of the int array are initialized with zeros. Let zeros represent an empty square on
+the game board.
+
+
+Требования:
+1.	A private int[][] (matrix or two-dimensional int array) gameField field must be created in the Game2048 class.
+2.	The matrix size must be SIDExSIDE.
+3.	A void createGame() method must be created in the Game2048 class.
+4.	The createGame() method must be called in the initialize() method.
+
+
+2048 (Part 3/18)
+
+Have you tried running your program? The game board is too small. Let&#39;s fix that. To do this, we need to
+override the initialize() method of the Game parent class. The initialize() method lets you
+set the size of the game board, decide whether to display the grid, etc.
+
+To set the size of the game board in the initialize() method, call the
+setScreenSize(int width, int height) method of the Game parent class, passing it the width and height
+of the game board. As you know, the size of the game board in our game is 4x4 tiles. We suggest that you
+create a private
+static final int SIDE variable (constant) whose value is 4 and pass it as the arguments to the
+setScreenSize() method. You should end up with something like this: setScreenSize(SIDE, SIDE). You can run
+your own program again
+and see what happens.
+
+
+
+2048 (Part 3/18)
+
+Hi! Today we&#39;ll start writing an interesting and addictive game &mdash; 2048. Are you ready? Then let&#39;s go.
+Rules of the game:
+The game board is square. The standard board size is 4x4 tiles. The objective of the game is to get a tile
+whose value is 2048.
+1. A tile with a value of 2 (probability of 90%) or 4 (probability of 10%) appears in each round.
+2. You can shift all the tiles on the game board to one of the 4 sides by pressing the corresponding key:
+up, down,
+right, or left. If a shift causes two tiles with the same value to &quot;collide&quot;, then they merge into one.
+The new value is the sum of the merged tiles. After each move, a new tile with a value of 2 or 4 appears in
+an empty
+space on the game board. If pressing a key does not cause the tiles to change locations or values, then no
+turn has been made.
+3. If more than two tiles of the same value are in the same row or column, then they merge from the side
+from which they are being shifted. For example, after a shift to the left, the tiles (4, 4, 4, 0) in the
+same row
+become (8, 4, 0, 0). After a shift to the right, they become (0, 0, 4, 8). This way of handling ambiguity
+makes it possible to more accurately formulate a game strategy.
+4. With each merger, the score increases by the value of the resulting tile.
+5. The game is lost if no further moves are possible.
+6. The game ends in victory if a tile with the value 2048 appears on the game board.
+
+Now let&#39;s start implementing the game:
+First, we&#39;ll need a class where the game logic will be implemented. Let&#39;s call it Game2048.
+We&#39;ve created a &quot;game engine&quot; that starts the game itself, redraws game elements, etc.
+Accordingly, your Game2048 class must inherit the Game class. This and other engine classes are located
+in the com.codegym.engine.cell package. To use them, the Game2048 class must include the following import
+statement:
+import com.codegym.engine.cell.*;
+Try running your Game2048 class and see what happens.
+
+
+
