@@ -12,7 +12,6 @@ Frameworks/Apis/Languages used:
 
 * [Java]
 * [CodeGymApi](https://codegym.cc/welcome/start)
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
